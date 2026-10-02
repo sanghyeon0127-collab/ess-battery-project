@@ -1,0 +1,17 @@
+[project]
+name = "ess-battery-project"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "h5py>=3.16.0",
+    "ipykernel>=7.4.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.2",
+    "nbconvert>=7.17.1",
+    "numpy>=2.5.3",
+    "pandas>=3.0.6",
+    "pyarrow>=25.0.1",
+    "scikit-learn>=1.9.1",
+    "scipy>=1.18.1",
+    "seaborn>=0.13.2",
+]
