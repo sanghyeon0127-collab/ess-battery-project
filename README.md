@@ -34,6 +34,7 @@
 
 
 ## 환경 설정
+Python 3.12 이상
 ```bash
 git clone <repo-url>
 cd ess-battery-project
@@ -91,6 +92,8 @@ python src/train.py mine log        # 최종 구성. feature_set : mine | discha
 
 ### 모델 선택 및 근거
 - 후보 모델 : Ridge, ElasticNet, SVR, RandomForest, GradientBoosting
+  - 선정 근거 : 선형(Ridge·ElasticNet) = ΔQ–log 수명 직선 관계(EDA 3) + 소표본·다중공선성 대응 규제(EDA 5) /
+    SVR·트리(RF·GBR) = 비선형 가능성 확인용, 단 트리는 학습 범위 밖 수명을 예측할 수 없음(EDA 1·6)
 - 최종 모델 : Ridge (alpha=1.0)
 - 선택 규칙 : 1-SE — CV 최저 모델의 CV MAPE + 1 표준오차 안에 드는 모델 중 가장 단순한 것
 - 선택 이유 : 학습 셀 29개라 CV 차이가 표준오차 안이면 가장 단순한 모델 선택
